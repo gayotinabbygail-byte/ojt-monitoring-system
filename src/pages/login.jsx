@@ -2,13 +2,19 @@ import "../styles/Login.css";
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        console.log("Email;", email);
+        console.log("Password:", password);
+    }
     return (
         <div className="login-container">
             <div className="login-card">
                 <h1>Voting System</h1>
                 <p>Please sign in to continue.</p>
 
-                <form>
+                <form onSubmit={handleLogin}>
                     <div className="input-group">
                         <label>Email</label>
                         <input
